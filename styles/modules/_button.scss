@@ -1,0 +1,71 @@
+.btn-border{
+  position: absolute;
+  content: "";
+  background: #e03131;
+  transition: all 0.3s ease;
+}
+
+#about .btn {
+  width: 160px;
+  height: 50px;
+  line-height: 3.5;
+  display: inline-block;
+  color: #000;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  &::before{
+    @extend .btn-border;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 50%;
+  }
+  &::after {
+    @extend .btn-border;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    height: 2px;
+  }
+  &:hover{
+    &::before{
+      height:100%;
+    }
+    &::after{
+      width:100%;
+    }
+  }
+
+  span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    &::before {
+      @extend .btn-border;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 50%;
+    }
+    &::after {
+      @extend .btn-border;
+      left: 0;
+      top: 0;
+      width: 20%;
+      height: 2px;
+    }
+    &:hover{
+      &::before{
+        height:100%;
+      }
+      &::after{
+        width:100%;
+      }
+    }
+  }
+}
+
+
